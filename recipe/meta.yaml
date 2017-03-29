@@ -1,6 +1,6 @@
 {% set name = "goftests" %}
-{% set version = "0.2.3" %}
-{% set sha256 = "786e6877ac327576a07a50da47a28df28340cac8028cfd992660234ab34f5910" %}
+{% set version = "0.2.5" %}
+{% set sha256 = "90212ba69fca85c5ec8d280a45b475f787fb914a57b2a836fc545c661b182a13" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,6 @@ requirements:
     - python
     - numpy
     - scipy
-    - scikit-learn
 
 test:
   imports:
@@ -33,6 +32,7 @@ about:
   home: https://github.com/posterior/goftests
   license: BSD-3-Clause
   license_family: BSD
+  license_file: LICENSE.txt
   summary: 'Goodness of fit tests for general datatypes'
   description: |
     Goftests is intended for unit testing random samplers that generate
