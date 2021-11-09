@@ -1,32 +1,37 @@
 {% set name = "goftests" %}
 {% set version = "0.2.7" %}
-{% set sha256 = "e6cd0dba04aeb364ee6482277ac08d24d02dc441e764b4088e7d29c468302ffa" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/goftests-{{ version }}.tar.gz
+  sha256: e6cd0dba04aeb364ee6482277ac08d24d02dc441e764b4088e7d29c468302ffa
 
 build:
-  number: 1002
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
-    - setuptools
+    - python >=3.6
+    - pip
+    # - pypandoc
   run:
-    - python
+    - python >=3.6
     - numpy
     - scipy
 
 test:
   imports:
     - goftests
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/posterior/goftests
