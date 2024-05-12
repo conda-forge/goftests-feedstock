@@ -1,5 +1,5 @@
 {% set name = "goftests" %}
-{% set version = "0.2.7" %}
+{% set version = "0.3.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/goftests-{{ version }}.tar.gz
-  sha256: e6cd0dba04aeb364ee6482277ac08d24d02dc441e764b4088e7d29c468302ffa
+  sha256: aebe27a1a722cc3093ef9a695d2cc4e7b32f28d54792c077e4d23c24009cf57a
 
 build:
   number: 0
